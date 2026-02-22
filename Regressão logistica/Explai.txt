@@ -1,0 +1,126 @@
+Claro! Vou explicar **regressão logística** de forma clara e prática.
+
+---
+
+## ✅ O que é regressão logística?
+
+A **regressão logística** é um algoritmo de **aprendizado supervisionado** usado para **classificação**, principalmente **binária**, ou seja, quando a saída é:
+
+* 0 ou 1
+* Sim ou Não
+* Fraude ou Não fraude
+* Aprovado ou Reprovado
+
+Apesar do nome, **não é regressão**, e sim um **classificador probabilístico**.
+
+---
+
+## ✅ Ideia central
+
+Ela estima a **probabilidade** de um evento ocorrer:
+
+[
+P(y=1 \mid x)
+]
+
+E depois classifica com base em um limiar (ex.: 0,5).
+
+---
+
+## ✅ Modelo matemático
+
+1️⃣ Primeiro, calcula uma combinação linear:
+
+[
+z = w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n
+]
+
+2️⃣ Depois aplica a **função sigmoide**:
+
+[
+\sigma(z) = \frac{1}{1 + e^{-z}}
+]
+
+Isso transforma qualquer valor em algo entre **0 e 1**, interpretado como **probabilidade**.
+
+---
+
+## ✅ Regra de decisão
+
+[
+\hat{y} =
+\begin{cases}
+1, & \text{se } P \ge 0.5 \
+0, & \text{caso contrário}
+\end{cases}
+]
+
+(O limiar pode ser ajustado conforme o problema.)
+
+---
+
+## ✅ Como o modelo aprende?
+
+Ele ajusta os pesos minimizando a **função de custo log-loss (entropia cruzada)**:
+
+[
+J = -\frac{1}{m} \sum [y \log(p) + (1-y)\log(1-p)]
+]
+
+Normalmente usando:
+
+* **Gradiente descendente**
+* Ou métodos numéricos como Newton-Raphson
+
+---
+
+## ✅ Interpretação dos coeficientes
+
+Cada coeficiente indica:
+
+* Quanto aquela variável **aumenta ou diminui** a chance do evento ocorrer
+* O sinal (+ ou −) indica direção do efeito
+
+---
+
+## ✅ Vantagens
+
+✔ Simples e rápido
+✔ Fácil de interpretar
+✔ Funciona bem com dados lineares
+✔ Produz probabilidades
+
+---
+
+## ❌ Limitações
+
+✖ Não lida bem com relações muito não lineares
+✖ Sensível a outliers
+✖ Requer independência entre variáveis
+
+---
+
+## ✅ Exemplo prático
+
+Exemplo: prever se uma transação é fraude (1) ou não (0):
+
+Entradas:
+
+* Valor da compra
+* Horário
+* Localização
+* Histórico do cliente
+
+Saída:
+
+* Probabilidade de fraude
+
+---
+
+Se quiser, posso:
+✅ Comparar com árvore de decisão
+✅ Mostrar exemplo numérico
+✅ Implementar em Python
+✅ Fazer um resumo para prova
+
+Só me dizer 🙂

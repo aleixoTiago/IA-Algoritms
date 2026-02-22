@@ -1,0 +1,78 @@
+Claro! Vou explicar o **k-NN (k-Nearest Neighbors)** de forma clara e prática.
+
+---
+
+## 📌 O que é o k-NN?
+
+O **k-NN** é um algoritmo de **aprendizado supervisionado** usado principalmente para:
+
+* ✅ **Classificação** (ex: spam ou não spam)
+* ✅ **Regressão** (prever valores numéricos)
+
+Ele é chamado de algoritmo **preguiçoso (lazy learning)** porque não constrói um modelo durante o treino — ele apenas armazena os dados e faz cálculos quando precisa prever.
+
+---
+
+## ⚙️ Como ele funciona?
+
+Para classificar um novo ponto:
+
+1. Escolhe-se um valor de **k** (número de vizinhos).
+2. Calcula-se a **distância** entre o novo ponto e todos os dados de treino.
+3. Selecionam-se os **k mais próximos**.
+4. A classe mais comum entre eles é atribuída ao novo ponto (votação).
+
+📏 Distância mais comum: **euclidiana**, mas pode ser Manhattan, Minkowski etc.
+
+---
+
+## 🧠 Exemplo simples
+
+Suponha que queremos classificar uma fruta como 🍎 maçã ou 🍊 laranja.
+
+* k = 3
+* Os 3 vizinhos mais próximos são: maçã, maçã, laranja
+  ➡️ Resultado: **maçã**
+
+---
+
+## 🔧 Principais hiperparâmetros
+
+* **k**: número de vizinhos (ímpar evita empate)
+* **Métrica de distância**: euclidiana, Manhattan etc.
+* **Pesos**: todos iguais ou ponderados pela distância
+
+---
+
+## ✅ Vantagens
+
+✔ Simples de entender e implementar
+✔ Funciona bem em problemas com fronteiras complexas
+✔ Não precisa de treinamento explícito
+
+---
+
+## ❌ Desvantagens
+
+✖ Lento para grandes bases de dados
+✖ Sensível à escala dos dados (precisa normalização)
+✖ Sensível a ruído e outliers
+
+---
+
+## 📊 Complexidade
+
+* Treinamento: praticamente zero
+* Predição: **O(n × d)** por ponto (n = nº de amostras, d = dimensões)
+
+---
+
+## 🧪 Quando usar k-NN?
+
+* Bases pequenas ou médias
+* Quando você quer um método simples e interpretável
+* Quando não quer assumir forma específica para as fronteiras de decisão
+
+---
+
+Se quiser, posso te mostrar um exemplo em Python ou comparar com outros algoritmos como árvore de decisão ou SVM — só me dizer 😊
